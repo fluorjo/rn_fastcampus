@@ -2,10 +2,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import StateWithClassComponent from './StateWithClassComponent';
+import StateWithFunctionalComponent from './StateWithFunctionalComponent';
 export default function App() {
   return (
     <View style={styles.container}>
       <StateWithClassComponent />
+
+      <StateWithFunctionalComponent />
     </View>
   );
 }
