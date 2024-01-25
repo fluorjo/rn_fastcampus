@@ -1,11 +1,11 @@
 // 시작 전 App.js 코드
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-
+import {StyleSheet, View} from 'react-native';
+import StateWithClassComponent from './StateWithClassComponent';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <StateWithClassComponent />
     </View>
   );
 }
