@@ -1,14 +1,17 @@
 // 시작 전 App.js 코드
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import StateWithClassComponent from './StateWithClassComponent';
-import StateWithFunctionalComponent from './StateWithFunctionalComponent';
+import React, {useState} from 'react';
+import {Button, StyleSheet, View} from 'react-native';
+import UseEffectWithFunctionalComponent from './UseEffectWithFunctionalComponent';
+
 export default function App() {
+  const [isTrue, setIsTrue] = useState(true);
   return (
     <View style={styles.container}>
-      <StateWithClassComponent />
-
-      <StateWithFunctionalComponent />
+      {/* <StateWithClassComponent /> */}
+      {/* <StateWithFunctionalComponent /> */}
+      {/* {isTrue ? <UseEffectWithClassComponent /> : null} */}
+      <UseEffectWithFunctionalComponent />
+      <Button title="toggle" onPress={() => setIsTrue(!isTrue)} />
     </View>
   );
 }

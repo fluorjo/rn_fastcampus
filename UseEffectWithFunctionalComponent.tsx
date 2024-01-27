@@ -1,11 +1,32 @@
-import React, {useState} from 'react';
-import {Button, Switch, Text, TextInput, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  ActivityIndicator,
+  Button,
+  Switch,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
-const Component = () => {
+const UseEffectWithFunctionComponent = () => {
   const [count, setCount] = useState(0);
   const [isOn, setIsOn] = useState(true);
   const [input, setInput] = useState('');
   const [isRefresh, setIsRefresh] = useState(false);
+
+  useEffect(() => {
+    console.log('didMount');
+  }, []);
+  useEffect(() => {
+    console.log('didUpdate-count', count);
+  }, [count]);
+  useEffect(() => {
+    if (isRefresh) {
+      setTimeout(() => {
+        setIsRefresh(false);
+      }, 2000);
+    }
+  }, [isRefresh]);
 
   return (
     <View style={{alignItems: 'center'}}>
@@ -31,9 +52,10 @@ const Component = () => {
       <Text style={{marginVertical: 15}}>
         -------------------------------------------------
       </Text>
-      <Button title="새로고침!" onPress={() => {}} />
+      <Button title="새로고침!" onPress={() => setIsRefresh(true)} />
+      {isRefresh && <ActivityIndicator />}
     </View>
   );
 };
 
-export default Component;
+export default UseEffectWithFunctionComponent;

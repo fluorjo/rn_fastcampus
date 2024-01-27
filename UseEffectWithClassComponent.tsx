@@ -4,7 +4,7 @@ interface State {
   count: number;
   what: number;
 }
-class Component extends React.Component<{}, State> {
+class UseEffectWithClassComponent extends React.Component<{}, State> {
   constructor(props: {}) {
     console.log('constructor');
     super(props);
@@ -41,4 +41,4 @@ class Component extends React.Component<{}, State> {
   }
 }
 
-export default Component;
+export default UseEffectWithClassComponent;
