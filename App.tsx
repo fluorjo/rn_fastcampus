@@ -1,7 +1,7 @@
 // 시작 전 App.js 코드
 import React, {useState} from 'react';
-import {Button, StyleSheet, View} from 'react-native';
-import UseEffectWithFunctionalComponent from './UseEffectWithFunctionalComponent';
+import {StyleSheet, View} from 'react-native';
+import CustomHook from './CustomHook';
 
 export default function App() {
   const [isTrue, setIsTrue] = useState(true);
@@ -10,8 +10,9 @@ export default function App() {
       {/* <StateWithClassComponent /> */}
       {/* <StateWithFunctionalComponent /> */}
       {/* {isTrue ? <UseEffectWithClassComponent /> : null} */}
-      <UseEffectWithFunctionalComponent />
-      <Button title="toggle" onPress={() => setIsTrue(!isTrue)} />
+      {/* <UseEffectWithFunctionalComponent /> */}
+      {/* <Button title="toggle" onPress={() => setIsTrue(!isTrue)} /> */}
+      <CustomHook />
     </View>
   );
 }
