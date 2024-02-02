@@ -1,27 +1,31 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {getBottomSpace, getStatusBarHeight} from 'react-native-iphone-x-helper';
-import Header from './Header';
-
+import React from "react";
+import { StyleSheet } from "react-native";
+import {
+  getBottomSpace,
+  getStatusBarHeight,
+} from "react-native-iphone-x-helper";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Header from "./src/Header.js"
 const statusBarHeight = getStatusBarHeight(true);
 const bottomSpace = getBottomSpace();
 
-console.log(statusBarHeight, bottomSpace);
-
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView edges={["right", "left"]} style={styles.container}>
+        <Header />
+      </SafeAreaView>
+      {/* <View style={styles.container}>
+        <Header />
+      </View> */}
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    // justifyContent:'flex-end',
+    backgroundColor: "#fff",
     paddingTop: statusBarHeight,
-    paddingBottom: bottomSpace,
   },
 });
