@@ -8,6 +8,7 @@ import Header from "./src/Header.js";
 import MyProfile from "./src/MyProfile.js";
 import { myProfile } from "./src/data.js";
 import Margin from "./src/Margin.js";
+import Division from "./src/Division.js";
 
 const statusBarHeight = getStatusBarHeight(true);
 const bottomSpace = getBottomSpace();
@@ -23,6 +24,10 @@ export default function App() {
         name={myProfile.name}
         introduction={myProfile.introduction}
       />
+
+      <Margin height={15}/>
+      <Division/>
+      <Margin height={12}/>
     </View>
   );
 }
