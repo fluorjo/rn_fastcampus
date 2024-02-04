@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
   getBottomSpace,
@@ -14,10 +14,13 @@ import { friendProfiles, myProfile } from "./src/data.js";
 
 const statusBarHeight = getStatusBarHeight(true);
 const bottomSpace = getBottomSpace();
-const onPressArrow = () => {
-  setIsOpened(!isOpened);
-};
 export default function App() {
+  const [isOpened, setIsOpened] = useState(true);
+
+  const onPressArrow = () => {
+    setIsOpened(!isOpened);
+  };
+
   return (
     <View style={styles.container}>
       <Header />
@@ -32,9 +35,13 @@ export default function App() {
       <Margin height={15} />
       <Division />
 
-      <FriendSection friendProfileLen={friendProfiles.length} onPressArrow />
+      <FriendSection
+        friendProfileLen={friendProfiles.length}
+        onPressArrow={onPressArrow}
+        isOpened={isOpened}
+      />
 
-      <FriendList data={friendProfiles} />
+      <FriendList data={friendProfiles} isOpened={isOpened} />
       <Margin height={12} />
     </View>
   );

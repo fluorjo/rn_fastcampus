@@ -7,20 +7,19 @@ const bottomSpace = getBottomSpace();
 
 export default (props) => {
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: bottomSpace }}
-    >
-      {props.data.map((item, index) => (
-        <View key={index}>
-          <Profile
-            uri={item.uri}
-            name={item.name}
-            introduction={item.introduction}
-          />
-          <Margin height={13} />
-        </View>
-      ))}
-    </ScrollView>
+    props.isOpened && (
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {props.data.map((item, index) => (
+          <View key={index}>
+            <Profile
+              uri={item.uri}
+              name={item.name}
+              introduction={item.introduction}
+            />
+            <Margin height={13} />
+          </View>
+        ))}
+      </ScrollView>
+    )
   );
 };
