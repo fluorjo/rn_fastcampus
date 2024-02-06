@@ -12,6 +12,8 @@ import Margin from "./src/Margin.js";
 import Profile from "./src/Profile.js";
 import TabBar from "./src/TabBar.js";
 import { friendProfiles, myProfile } from "./src/data.js";
+import styled from "styled-components/native";
+
 const statusBarHeight = getStatusBarHeight(true);
 const bottomSpace = getBottomSpace();
 export default function App() {
