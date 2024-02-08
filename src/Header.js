@@ -2,13 +2,13 @@
 // 구조분해 ( {} 안에 변수명 넣는 거 )가 필요없음.
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View,TouchableOpacity } from "react-native";
 
-const IconButton = (props) => {
+const IconButton = (name,bgColor) => {
   return (
-    <View style={{paddingHorizontal:6}}>
+    <TouchableOpacity hitSlop={{ top: 15, bottom: 15 }} style={{paddingHorizontal:6,backgroundColor:bgColor}}>
       <Ionicons name={props.name} size={24} color="black" />
-    </View>
+    </TouchableOpacity>
   );
 };
 
